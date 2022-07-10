@@ -1,0 +1,18 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+
+.qs_button {
+  width: 100%;
+  font-weight: 400;
+  /* color: blue; */
+  /* border-color: blue; */
+  font-size: 0.8rem;
+  margin: auto;
+  cursor: pointer;
+  border-radius: 0.4rem;
+}
