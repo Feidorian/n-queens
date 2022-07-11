@@ -15,4 +15,9 @@ function draw(){
 
 function windowResized(){
   nQueen.windowResized()
+};
+
+
+function keyPressed(){
+  nQueen.keyPressed();
 }

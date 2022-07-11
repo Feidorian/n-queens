@@ -2,7 +2,7 @@ function NQueen() {
 	let board;
 	this.iterator;
 	this.controls;
-	this.N;
+	this.N = 4;
 	let blackQueen, whiteQueen, redQueen, blueQueen;
 
 	this.createBoard = () => {
@@ -47,7 +47,6 @@ function NQueen() {
 	this.setup = () => {
 		imageMode(CENTER);
 
-		this.N = 4;
 		board = [];
 		this.controls = this.controls ?? new Controls(this);
 		this.createBoard();
@@ -55,25 +54,36 @@ function NQueen() {
 	};
 
 	this.displayBoard = function* () {
-		// for (let cell of board) {
-		// cell.draw();
-		// yield;
-		// }
+		for (let cell of board) {
+		cell.draw();
+		yield;
+		}
 	};
 
 	this.clearBoard = () => {
 		board.forEach(cell => {
 			cell.hasQueen = false;
 		});
-		// this.iterator = this.displayBoard();
+		this.iterator = this.displayBoard();
 	};
 
 	this.draw = () => {
 		this.iterator?.next();
+    
 	};
+
+  this.keyPressed = () => {
+      switch (keyCode) {
+        case 72:
+          return void this.controls.toggleVisibility();
+        case 67:
+          return void this.controls.toggleCollapsed();
+        default:
+      }
+  }
 
 	this.windowResized = () => {
 		resizeCanvas(windowWidth, windowHeight);
-		this.setup();
+		this.setup()
 	};
 }

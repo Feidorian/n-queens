@@ -16,10 +16,11 @@ function Controls(nQueen) {
 
 	controls.addRange("Dimension", 4, 16, nQueen.N, 1, newN => {
 		nQueen.N = newN;
-		nQueen.createBoard();
-		nQueen.iterator = nQueen.displayBoard();
-	});
+		resizeCanvas(windowWidth, windowHeight);
+    nQueen.setup()
 
+	});
+controls.overrideStyle('Dimension', 'minWidth', '230')
 	controls.addDropDown("Select Mode", ["Find Solution", "Verify Solution"], ({index, label, value}) => {});
 	controls.addButton("Find Solution", () => {});
 	controls.addButton("Clear Board", () => {
@@ -38,20 +39,24 @@ function Controls(nQueen) {
 
   let clearButton = content.children[5];
 	clearButton.remove();
+  clearButton = clearButton.children[0];
   clearButton.style.borderRadius = '8px'
+  clearButton.style.transform = 'unset'
+  clearButton.style.color = 'darkred';
+  clearButton.style.borderColor = "darkred";
 	let findSolutionButton = content.children[4];
   findSolutionButton.style.borderRadius = '8px';
+  findSolutionButton.style.borderColor = 'black';
 	findSolutionButton.remove();
+  findSolutionButton = findSolutionButton.children[0]
 
 	newContainer.append(findSolutionButton);
 	newContainer.append(clearButton);
 	content.append(newContainer);
 
   newContainer.style.display = 'flex'
-
-	// console.log(clearButton)
-	// newContainer.append(clearButton.children[0]);
-	// content.append(newContainer);
+  newContainer.style.gap = "6px"
+  newContainer.style.padding = "6px"
 
 	//  controls.saveInLocalStorage("N-Queens Control Settings");
 }
@@ -84,7 +89,7 @@ const ReadMe = () => {
        </li>
        <li>
          <b>Find Solution Mode:</b>
-         <br /> Select to find a solution for the provided dimension.
+         <br /> Select to find a solution for the current dimension.
        </li>
        <li>
          <b>Verify Solution Mode:</b>
