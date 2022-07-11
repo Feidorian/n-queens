@@ -110,9 +110,9 @@ const ReadMe = () => {
 
 const queenImages = () => {
 	return `<div class="image-container">
-    <img src="/assets/images/black-queen.svg" height="60px" alt="black-queen"/>
-    <img src="/assets/images/white-queen.svg" height="60px" alt="white-queen"/>
-    <img src="/assets/images/blue-queen.svg" height="60px" alt="blue-queen"/>
-    <img src="/assets/images/red-queen.svg" height="60px" alt="red-queen"/>
+    <img src="./assets/images/black-queen.svg" height="60px" alt="black-queen"/>
+    <img src="./assets/images/white-queen.svg" height="60px" alt="white-queen"/>
+    <img src="./assets/images/blue-queen.svg" height="60px" alt="blue-queen"/>
+    <img src="./assets/images/red-queen.svg" height="60px" alt="red-queen"/>
   </div>`;
 };
