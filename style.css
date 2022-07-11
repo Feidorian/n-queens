@@ -6,13 +6,98 @@ canvas {
   display: block;
 }
 
+
+
+
+details b{
+  color: darkred;
+}
+
+details {
+  border: 1px dashed darkred;
+  border-radius: 4px;
+  padding: 0 0px;
+}
+details > summary{
+
+  align-items: center;
+  line-height: 1rem;
+  font-size: 1rem;
+  color: darkred;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0.4rem;
+  margin-left: 1rem;
+
+
+}
+
+details > summary > p {
+  display: inline-block;
+  margin:0;
+  margin-left: 0rem;
+  text-transform: uppercase;
+}
+
+ol, ul{
+  font-size: 0.8rem;
+  padding: 0;
+  margin:0;
+  margin-left: 1.15rem;
+
+}
+li{
+  margin:0;
+  line-height: 1rem;
+}
+
 .qs_button {
   width: 100%;
   font-weight: 400;
-  /* color: blue; */
-  /* border-color: blue; */
+
   font-size: 0.8rem;
-  margin: auto;
+  margin-left: auto;
   cursor: pointer;
   border-radius: 0.4rem;
+  display: block;
+}
+
+
+.qs_title_bar{
+  text-align: center;
+  font-size: medium;
+  line-height: 1rem;
+  padding-top: 0.5rem !important;
+}
+
+.qs_main, .qs_main > :nth-child(2){
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.20),
+  0 2px 2px rgba(0, 0, 0, 0.20),
+  0 4px 4px rgba(0, 0, 0, 0.20) !important;
+  border-radius: 4px !important;
+}
+
+.qs_main > :nth-child(1){
+  border-top-left-radius: 4px !important;
+  border-top-right-radius: 4px !important;
+
+
+}
+
+[alt=black-queen], [alt=blue-queen], [alt=red-queen]{
+  background-color: white;
+}
+[alt=white-queen]{
+  background-color: black;
+}
+
+.image-container{
+  display: flex;
+  justify-content: space-around;
+  padding: 0 3px;
+}
+
+img{
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-radius: 4px;
 }
